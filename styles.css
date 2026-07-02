@@ -1,0 +1,215 @@
+:root {
+  --paper: #F7F5F0;
+  --paper-raised: #FFFFFF;
+  --ink: #1D1B18;
+  --ink-soft: #6B665D;
+  --line: #DEDAD0;
+  --writing: #B8752F;
+  --code: #2F6B62;
+  --websites: #2F6B9E;
+  --other: #5B5486;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+header {
+  padding: 64px 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(40px, 7vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  max-width: 14ch;
+}
+
+.intro {
+  margin-top: 22px;
+  max-width: 46ch;
+  font-size: 17px;
+  color: var(--ink-soft);
+}
+
+.header-links {
+  margin-top: 28px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.header-links a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+}
+
+.header-links a:hover { opacity: 0.6; }
+
+.back-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.back-link:hover { color: var(--ink); border-color: var(--ink); }
+
+/* ---------- Category grid (home page) ---------- */
+.grid {
+  padding: 40px 0 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--paper-raised);
+  padding: 34px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.15s ease;
+  min-height: 150px;
+}
+
+.card:hover { background: #FBFAF7; }
+
+.card-tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-tag .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.card[data-medium="writing"] .card-tag { color: var(--writing); }
+.card[data-medium="writing"] .dot { background: var(--writing); }
+.card[data-medium="code"] .card-tag { color: var(--code); }
+.card[data-medium="code"] .dot { background: var(--code); }
+.card[data-medium="websites"] .card-tag { color: var(--websites); }
+.card[data-medium="websites"] .dot { background: var(--websites); }
+.card[data-medium="other"] .card-tag { color: var(--other); }
+.card[data-medium="other"] .dot { background: var(--other); }
+
+.card h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.card p {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+}
+
+.card .arrow {
+  margin-top: auto;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* ---------- List page (essays / code / websites / other) ---------- */
+.list {
+  padding: 40px 0 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.list-item:hover h3 { text-decoration: underline; }
+
+.list-item h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.list-item p {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+.list-item .year {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.empty-state {
+  padding: 40px 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 40px 0 60px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+footer a { text-decoration: underline; }
